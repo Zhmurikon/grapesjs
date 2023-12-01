@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GrapesJS</title>
+    <link rel="stylesheet" href="dist/css/grapes.min.css" />
+    <link href="https://unpkg.com/grapesjs-plugin-toolbox/dist/grapesjs-plugin-toolbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/grapes-modules/plugins_2/grapesjs-rte-extensions/dist/grapesjs-rte-extensions.min.css" />
+    <link rel="stylesheet" href="/grapes-modules/plugins_2/grapesjs-template-manager/grapesjs-project-manager.min.css" />
+
+    <!--<link rel="stylesheet" href="./grapes-modules/modules/plugins/filestack/dist/grapesjs-plugin-filestack.css" />-->
+    <script src="grapes.min.js"></script>
+    <!-- DB -->
+    <!-- <script src="./grapes-modules/blocks-basic/dist/index.js"></script> -->
+    <script src="./grapes-modules/plugins/blocks-basic/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/components-countdown/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/components-custom-code/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/components-forms/dist/index.js"></script>
+    <!--<script src="./grapes-modules/plugins/components-lory/dist/grapesjs-lory-slider.min.js"></script>-->
+    <script src="./grapes-modules/plugins/components-navbar/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/components-tabs/dist/grapesjs-tabs.min.js"></script>
+    <script src="./grapes-modules/plugins/components-tooltip/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/components-typed/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/export/dist/index.js"></script>
+    <!--<script src="./grapes-modules/plugins/filestack/dist/grapesjs-plugin-filestack.min.js"></script>-->
+    <script src="./grapes-modules/plugins/grapesjs-code-editor/dist/grapesjs-code-editor.min.js"></script>
+    <script src="./grapes-modules/plugins/preset-webpage/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/style-bg/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/style-filter/dist/index.js"></script>
+    <script src="./grapes-modules/plugins/tui-image-editor/dist/index.js"></script>
+    <!-- New Plugins <script src="./grapes-modules/plugins_2/grapesjs-fonts/dist/index.js"></script> -->
+    
+    <script src="https://unpkg.com/grapesjs-plugin-toolbox"></script>
+    <script src="./grapes-modules/plugins_2/grapesjs-rte-extensions/dist/grapesjs-rte-extensions.min.js"></script>
+    <script src="./grapes-modules/plugins_2/grapesjs-style-border/dist/index.js"></script>
+    <script src="https://unpkg.com/grapesjs-tailwind"></script>
+    <script src="https://unpkg.com/grapesjs-project-manager"></script>
+    <script src="./grapes-modules/plugins_2/grapesjs-ui-suggest-classes/dist/index.js"></script>
+
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      .change-theme-button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 5px;
+      }
+      
+      .change-theme-button:focus {
+        /* background-color: yellow; */
+        outline: none;
+        box-shadow: 0 0 0 2pt #c5c5c575;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="gjs" style="height:0px; overflow:hidden;">
+      <div class="panel">
+        <h1 class="welcome">Welcome to</h1>
+        <div class="big-title">
+          <svg class="logo" viewBox="0 0 100 100">
+            <path d="M40 5l-12.9 7.4 -12.9 7.4c-1.4 0.8-2.7 2.3-3.7 3.9 -0.9 1.6-1.5 3.5-1.5 5.1v14.9 14.9c0 1.7 0.6 3.5 1.5 5.1 0.9 1.6 2.2 3.1 3.7 3.9l12.9 7.4 12.9 7.4c1.4 0.8 3.3 1.2 5.2 1.2 1.9 0 3.8-0.4 5.2-1.2l12.9-7.4 12.9-7.4c1.4-0.8 2.7-2.2 3.7-3.9 0.9-1.6 1.5-3.5 1.5-5.1v-14.9 -12.7c0-4.6-3.8-6-6.8-4.2l-28 16.2" />
+          </svg>
+          <span>GrapesJS</span>
+        </div>
+        <div class="description">This is a demo content from index.html. For the development, you shouldn't edit this file, instead you can copy and rename it to _index.html, on next server start the new file will be served, and it will be ignored by git.</div>
+      </div>
+      <style>
+        .panel {
+          width: 90%;
+          max-width: 700px;
+          border-radius: 3px;
+          padding: 30px 20px;
+          margin: 150px auto 0px;
+          background-color: #d983a6;
+          box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+          color: rgba(255, 255, 255, 0.75);
+          font: caption;
+          font-weight: 100;
+        }
+        
+        .welcome {
+          text-align: center;
+          font-weight: 100;
+          margin: 0px;
+        }
+        
+        .logo {
+          width: 70px;
+          height: 70px;
+          vertical-align: middle;
+        }
+        
+        .logo path {
+          pointer-events: none;
+          fill: none;
+          stroke-linecap: round;
+          stroke-width: 7;
+          stroke: #fff;
+        }
+        
+        .big-title {
+          text-align: center;
+          font-size: 3.5rem;
+          margin: 15px 0;
+        }
+        
+        .description {
+          text-align: justify;
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+      </style>
+    </div>
+
+    <script type="text/javascript">
+      var editor = grapesjs.init({
+        showOffsets: 1,
+        noticeOnUnload: 0,
+        container: '#gjs',
+        height: '100%',
+        fromElement: true,
+        storageManager: { type: 'indexeddb' },
+        plugins: [
+          'gjs-blocks-basic',
+          'grapesjs-component-countdown',
+          'grapesjs-custom-code',
+          'grapesjs-plugin-forms',
+          /*'grapesjs-lory-slider', */
+          'grapesjs-navbar',
+          'grapesjs-tabs',
+          'grapesjs-tooltip',
+          'grapesjs-typed',
+          'grapesjs-plugin-export',
+          /*'gjs-plugin-filestack',  */
+          'grapesjs-preset-webpage',
+          'grapesjs-style-bg',
+          'grapesjs-style-filter',
+          'grapesjs-tui-image-editor',
+          'grapesjs-ui-suggest-classes',
+          /*'@silexlabs/grapesjs-fonts',*/
+          'grapesjs-plugin-toolbox',
+          'grapesjs-project-manager',
+          'grapesjs-rte-extensions',
+          'grapesjs-style-border',
+          'grapesjs-tailwind',
+        ],
+        pluginsOpts: {
+          'gjs-blocks-basic': {
+            /* ...options */
+          },
+          "grapesjs-component-countdown": {},
+          "grapesjs-custom-code": {},
+          "grapesjs-plugin-forms": {},
+          /*"grapesjs-lory-slider": {},*/
+          "grapesjs-navbar": {},
+          "grapesjs-tabs": {},
+          "grapesjs-tooltip": {},
+          "grapesjs-typed": {},
+          "grapesjs-plugin-export": {},
+          /*"gjs-plugin-filestack": {},*/
+          "grapesjs-preset-webpage": {},
+          "grapesjs-style-bg": {},
+          "grapesjs-style-filter": {},
+          'grapesjs-tui-image-editor': {
+            config: {
+              includeUI: {
+                initMenu: 'filter',
+              },
+            },
+          },
+          'grapesjs-ui-suggest-classes': {},
+          /*'@silexlabs/grapesjs-fonts':{
+            api_key: 'AIzaSyATUHYwq97MdkNBC2RUn03CrYcO-1cL8uA'
+          },*/
+
+        },
+        styleManager: {
+          sectors: [
+            {
+              name: 'General',
+              open: false,
+              buildProps: ['float', 'display', 'position', 'top', 'right', 'left', 'bottom']
+            },
+            {
+              name: 'Flex',
+              open: false,
+              buildProps: ['flex-direction', 'flex-wrap', 'justify-content', 'align-items', 'align-content', 'order', 'flex-basis', 'flex-grow', 'flex-shrink', 'align-self']
+            },
+            {
+              name: 'Dimension',
+              open: false,
+              buildProps: ['width', 'height', 'max-width', 'min-height', 'margin', 'padding']
+            },
+            {
+              name: 'Typography',
+              open: false,
+              buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'color', 'line-height', 'text-shadow']
+            },
+            {
+              name: 'Decorations',
+              open: false,
+              buildProps: ['border-radius-c', 'background-color', 'border-radius', 'border', 'box-shadow', 'background']
+            },
+            {
+              name: 'Extra',
+              open: false,
+              buildProps: ['transition', 'perspective', 'transform']
+            },
+            {
+              id: 'extra2',
+              name: 'Extra2',
+              properties: [
+                { extend: 'filter' },
+                { extend: 'filter', property: 'backdrop-filter' },
+              ],
+            }
+          ]
+        },
+        commands: {
+          defaults: [
+            window['grapesjs-code-editor'].codeCommand,
+          ],
+        },
+        panels: window['grapesjs-code-editor'].panels,
+      })
+      
+      const pn = editor.Panels;
+      pn.addButton('options', {
+          id: 'open-templates',
+          className: 'fa fa-folder-o',
+          attributes: {
+              title: 'Open projects and templates'
+          },
+          command: 'open-templates', //Open modal 
+      });
+      pn.addButton('views', {
+          id: 'open-pages',
+          className: 'fa fa-file-o',
+          attributes: {
+              title: 'Take Screenshot'
+          },
+          command: 'open-pages',
+          togglable: false
+      });
+
+      editor.BlockManager.add('testBlock', {
+        label: 'Block',
+        attributes: { class: 'gjs-fonts gjs-f-b1' },
+        content: `<div style="padding-top:50px; padding-bottom:50px; text-align:center">Test block</div>`
+      })
+      
+      editor.BlockManager.add('h1-block', {
+        label: 'Heading',
+        content: '<h1>Put your title here</h1>',
+        category: 'Basic',
+        attributes: {
+          title: 'Insert h1 block'
+        }
+      })
+    </script>
+  </body>
+</html>
